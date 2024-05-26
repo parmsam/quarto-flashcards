@@ -45,9 +45,12 @@ format:
   revealjs:
     flashcards: 
       key: 'r'
+      key2: 't'
 revealjs-plugins:
   - flashcards
 ```
+
+You'll also notice a `key2` option. This is for the second key that can be used to shuffle the slides. By default, it's set to 't' but you can change it to any key you like.
 
 ## Example
 

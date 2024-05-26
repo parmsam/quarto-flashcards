@@ -37,6 +37,14 @@ window.RevealFlashcards = function () {
           flashcardBack.classList.toggle('active');
         }
       });
+
+      settings.key2 = options.key ? options.key.toLowerCase() : "t";
+      settings.keyCode2 = keyCodes[settings.key2] || 84;
+
+      deck.addKeyBinding({ keyCode: settings.keyCode2, key: settings.key2 }, () => {
+        deck.shuffle();
+      });
+
     },
   };
 };
