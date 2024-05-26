@@ -1,0 +1,7 @@
+.flashcard-front, .flashcard-back.active {
+    display: block; /* Show the front of the flashcard by default and the back when it's active */
+}
+
+.flashcard-back, .flashcard-front.active {
+    display: none; /* Initially hide the back of the flashcard and the front when it's active */
+}
