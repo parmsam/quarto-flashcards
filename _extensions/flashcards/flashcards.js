@@ -43,6 +43,7 @@ window.RevealFlashcards = function () {
 
       deck.addKeyBinding({ keyCode: settings.keyCode2, key: settings.key2 }, () => {
         deck.shuffle();
+        deck.slide(0, 0, 0);
       });
 
     },

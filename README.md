@@ -50,7 +50,7 @@ revealjs-plugins:
   - flashcards
 ```
 
-You'll also notice a `key2` option. This is a keyboard shortcut that can be used to shuffle the slides. By default, it's set to 't' but you can change it to any key you like. Then you can press `Shift + ← (left arrow)` to jump to the first slide (in the new order). 
+You'll also notice a `key2` option. This is a keyboard shortcut that can be used to shuffle the slides and jump to the new first slide. By default, it's set to 't' but you can change it to any key you like.
 
 ## Example
 

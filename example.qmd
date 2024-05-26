@@ -73,7 +73,7 @@ where $y_i$ is the observed value and $\hat{y}_i$ is the predicted value.
 ::: {.flashcard-front}
 The `flashcards` plugin is a great way to create flashcards for your RevealJS presentations in Quarto. 
 
-You can shuffle the order of the slides by pressing the `t` key. Then you can press Shift + ← (left arrow) to jump to the first slide (in the new order).
+You can shuffle the order of the slides by pressing the `t` key.
 :::
 
 ::: {.flashcard-back}
