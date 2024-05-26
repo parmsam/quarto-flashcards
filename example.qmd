@@ -1,0 +1,60 @@
+---
+title: "Flashcards Example"
+format:
+  revealjs:
+    flashcards: 
+      key: 'q'
+revealjs-plugins:
+  - flashcards
+---
+
+## Intro
+
+::: {.flashcard-front}
+This is an example of using the `flashcards` plugin in a reveal.js presentation. 
+
+Press the `q` key (by default) to flip a flashcard slide. You can you can override the default keybinding by setting the `key` option in the YAML header.
+:::
+
+:::{.flashcard-back}
+Nicely done! Let's go over some geography flashcards to see how this looks.
+:::
+
+## Question 1
+
+::: {.flashcard-front}
+What is the capital of France?
+
+[![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/France_location_map.svg/1252px-France_location_map.svg.png?20160102094348){height=400px}](https://en.wikipedia.org/wiki/France)
+:::
+
+::: {.flashcard-back}
+Paris
+
+![](https://upload.wikimedia.org/wikipedia/commons/c/cf/France_and_its_region.png){height=400px}
+:::
+
+## Question 2
+
+::: {.flashcard-front}
+What is the capital of Germany?
+
+[![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Germany_location_map.svg/1012px-Germany_location_map.svg.png?20130916125158){height=400px}](https://en.wikipedia.org/wiki/Germany)
+:::
+
+::: {.flashcard-back}
+Berlin
+:::
+
+
+## Question 3
+
+::: {.flashcard-front}
+What is the capital of Italy?
+
+[![](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Italy_location_map.svg/954px-Italy_location_map.svg.png?20210619084651){height=400px}](https://en.wikipedia.org/wiki/Italy)
+:::
+
+::: {.flashcard-back}
+Rome
+:::

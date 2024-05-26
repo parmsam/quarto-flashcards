@@ -1,0 +1,14 @@
+title: Flashcards
+author: parmsam
+version: 1.0.0
+quarto-required: ">=1.3.0"
+contributes:
+  revealjs-plugins:
+    - name: RevealFlashcards
+      script:
+        - flashcards.js
+      stylesheet:
+        - flashcards.css
+      config:
+        - key: "f"
+
