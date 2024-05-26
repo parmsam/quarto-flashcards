@@ -17,7 +17,7 @@ Press the `q` key (by default) to flip a flashcard slide. You can you can overri
 :::
 
 :::{.flashcard-back}
-Nicely done! Let's go over some geography flashcards to see how this looks.
+Nicely done! Let's go over some example flashcards to see how this looks.
 :::
 
 ## Question 1
@@ -34,27 +34,48 @@ Paris
 ![](https://upload.wikimedia.org/wikipedia/commons/c/cf/France_and_its_region.png){height=400px}
 :::
 
+::: footer
+Dont forget you flip the card by pressing the `q` key.
+:::
+
 ## Question 2
 
 ::: {.flashcard-front}
-What is the capital of Germany?
-
-[![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Germany_location_map.svg/1012px-Germany_location_map.svg.png?20130916125158){height=400px}](https://en.wikipedia.org/wiki/Germany)
+Plot a histogram of the `Sepal.Length` column in the `iris` dataset using `ggplot2`.
 :::
 
 ::: {.flashcard-back}
-Berlin
+```{r}
+#| fig-width: 10
+#| fig-height: 4.5
+#| echo: true
+library(ggplot2)
+ggplot(iris, aes(x = Sepal.Length)) +
+  geom_histogram()
+```
 :::
 
 
-## Question 3
+## Question 3 {background-color="lightblue"}
 
 ::: {.flashcard-front}
-What is the capital of Italy?
-
-[![](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Italy_location_map.svg/954px-Italy_location_map.svg.png?20210619084651){height=400px}](https://en.wikipedia.org/wiki/Italy)
+What is the equation to calculate Mean Squared Error (MSE)?
 :::
 
 ::: {.flashcard-back}
-Rome
+$\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$
+
+where $y_i$ is the observed value and $\hat{y}_i$ is the predicted value.
+:::
+
+# Conclusion
+
+::: {.flashcard-front}
+The `flashcards` plugin is a great way to create flashcards for your RevealJS presentations in Quarto.
+:::
+
+::: {.flashcard-back}
+Thanks for reading!
+
+Why are you still here? Go make some flashcards!
 :::
