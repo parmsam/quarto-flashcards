@@ -46,21 +46,26 @@ window.RevealFlashcards = function () {
         flipButton.style.width = '5rem';
         flipButton.style.height = '5rem';
 
-        deck.getSlides().forEach(slide => {
-          let clone = flipButton.cloneNode(true);
+        deck.getSlides().forEach((slide, index) => {
+          // Ignore the first slide (main title slide)
+          // if (index === 0) return;
 
-          // Add a click event listener to the cloned flip button
-          clone.addEventListener('click', () => {
-            let flashcardFront = slide.querySelector('.flashcard-front');
-            let flashcardBack = slide.querySelector('.flashcard-back');
-            if (flashcardFront && flashcardBack) {
-              // Toggle the active class between the front and back of the flashcard
-              flashcardFront.classList.toggle('active');
-              flashcardBack.classList.toggle('active');
-            }
-          });
+          let flashcardFront = slide.querySelector('.flashcard-front');
+          let flashcardBack = slide.querySelector('.flashcard-back');
 
-          slide.appendChild(clone);
+          if (flashcardBack || flashcardFront) {
+            let clone = flipButton.cloneNode(true);
+
+            // Add a click event listener to the cloned flip button
+            clone.addEventListener('click', () => {
+              if (flashcardFront && flashcardBack) {
+                // Toggle the active class between the front and back of the flashcard
+                flashcardFront.classList.toggle('active');
+                flashcardBack.classList.toggle('active');
+              }
+            });
+            slide.appendChild(clone);
+          }
         });
       }
 
