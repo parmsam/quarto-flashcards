@@ -10,4 +10,7 @@ contributes:
       stylesheet:
         - flashcards.css
       config:
-        - key: "f"
+        flashcards:
+          key: "q"
+          key2: "t"
+          showFlipButton: true

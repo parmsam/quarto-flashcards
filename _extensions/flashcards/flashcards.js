@@ -18,11 +18,51 @@ window.RevealFlashcards = function () {
   return {
     id: "RevealFlashcards",
     init: function (deck) {
-
       const config = deck.getConfig();
+      console.log(config);
       const options = config.flashcards || {};
 
       var settings = {};
+      settings.flipButton = options.showFlipButton || true;
+
+      // Add the flip button to each slide
+      if (settings.flipButton) {
+        // Create the flip button
+        let flipButton = document.createElement('button');
+        flipButton.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2a76dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 3 21 3 21 8"></polyline>
+          <line x1="4" y1="20" x2="21" y2="3"></line>
+          <polyline points="21 16 21 21 16 21"></polyline>
+          <line x1="15" y1="15" x2="21" y2="21"></line>
+          <line x1="4" y1="4" x2="9" y2="9"></line>
+        </svg>
+      `;
+        flipButton.style.position = 'fixed';
+        flipButton.style.top = '0%';
+        flipButton.style.left = '100%';
+        flipButton.style.backgroundColor = 'transparent';
+        flipButton.style.border = 'none';
+        flipButton.style.width = '5rem';
+        flipButton.style.height = '5rem';
+
+        deck.getSlides().forEach(slide => {
+          let clone = flipButton.cloneNode(true);
+
+          // Add a click event listener to the cloned flip button
+          clone.addEventListener('click', () => {
+            let flashcardFront = slide.querySelector('.flashcard-front');
+            let flashcardBack = slide.querySelector('.flashcard-back');
+            if (flashcardFront && flashcardBack) {
+              // Toggle the active class between the front and back of the flashcard
+              flashcardFront.classList.toggle('active');
+              flashcardBack.classList.toggle('active');
+            }
+          });
+
+          slide.appendChild(clone);
+        });
+      }
 
       settings.key = options.key ? options.key.toLowerCase() : "q";
       settings.keyCode = keyCodes[settings.key] || 81;
@@ -38,7 +78,7 @@ window.RevealFlashcards = function () {
         }
       });
 
-      settings.key2 = options.key ? options.key.toLowerCase() : "t";
+      settings.key2 = options.key2 ? options.key2.toLowerCase() : "t";
       settings.keyCode2 = keyCodes[settings.key2] || 84;
 
       deck.addKeyBinding({ keyCode: settings.keyCode2, key: settings.key2 }, () => {
