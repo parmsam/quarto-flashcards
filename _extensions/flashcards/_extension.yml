@@ -11,4 +11,3 @@ contributes:
         - flashcards.css
       config:
         - key: "f"
-

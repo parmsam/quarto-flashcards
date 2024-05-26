@@ -13,7 +13,7 @@ If you're using version control, you will want to check in this directory.
 
 ## Using
 
-Simply add the extension to the list of reveal plugins like:
+Simply add the extension to the list of revealjs plugins like:
 
 ``` markdown
 title: My Presentation
@@ -23,26 +23,28 @@ revealjs-plugins:
   - flashcards
 ```
 
-Then use the following syntax to within a slide to a create flashcards.
+Then use the following syntax within a slide to create a flashcard.
 
 ``` markdown
+## Slide title goes here
+
 ::: {.flashcard-front}
-Front of the flashcard
+Front of the flashcard goes here
 :::
 
 ::: {.flashcard-back}
-Back of the flashcard
+Back of the flashcard goes here
 :::
 ```
 
-By default, the key to flip the flashcard is 'f'. You can change this by setting the `key` option in your YAML header like:
+By default, the key to flip the flashcard is 'q'. You can change this by setting the `key` option in your YAML header like:
 
 ``` markdown
 title: My Presentation
 format:
   revealjs:
     flashcards: 
-      key: 'f'
+      key: 'r'
 revealjs-plugins:
   - flashcards
 ```
@@ -51,6 +53,5 @@ revealjs-plugins:
 
 Here is the source code for a minimal example: [example.qmd](example.qmd).
 
-The output of `example.qmd` is [here](https://parmsam.github.io/quarto-easter-eggs/).
-
+The output of `example.qmd` is [here](https://parmsam.github.io/quarto-flashcards/).
 
