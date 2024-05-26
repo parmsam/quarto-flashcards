@@ -4,7 +4,7 @@ format:
   revealjs:
     flashcards: 
       key: 'q'
-      key2: 'i'
+      key2: 't'
       showFlipButton: false
 revealjs-plugins:
   - flashcards
