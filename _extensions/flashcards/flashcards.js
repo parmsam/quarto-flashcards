@@ -23,7 +23,7 @@ window.RevealFlashcards = function () {
       const options = config.flashcards || {};
 
       var settings = {};
-      settings.flipButton = options.showFlipButton || true;
+      settings.flipButton = options.showFlipButton ? options.showFlipButton: false;
 
       // Add the flip button to each slide
       if (settings.flipButton) {

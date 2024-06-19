@@ -5,7 +5,7 @@ format:
     flashcards: 
       key: 'q'
       key2: 't'
-      showFlipButton: false
+      showFlipButton: true
 revealjs-plugins:
   - flashcards
 ---
