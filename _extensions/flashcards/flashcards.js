@@ -69,10 +69,10 @@ window.RevealFlashcards = function () {
         });
       }
 
-      settings.key = options.key ? options.key.toLowerCase() : "q";
-      settings.keyCode = keyCodes[settings.key] || 81;
+      settings.flipKey = options.flipKey ? options.flipKey.toLowerCase() : "q";
+      settings.flipKeyCode = keyCodes[settings.flipKey] || 81;
 
-      deck.addKeyBinding({ keyCode: settings.keyCode, key: settings.key }, () => {
+      deck.addKeyBinding({ keyCode: settings.flipKeyCode, key: settings.flipKey }, () => {
         let currentSlide = deck.getSlide(deck.getState().indexh);
         let flashcardFront = currentSlide.querySelector('.flashcard-front');
         let flashcardBack = currentSlide.querySelector('.flashcard-back');
@@ -83,10 +83,10 @@ window.RevealFlashcards = function () {
         }
       });
 
-      settings.key2 = options.key2 ? options.key2.toLowerCase() : "t";
-      settings.keyCode2 = keyCodes[settings.key2] || 84;
+      settings.shuffleKey = options.shuffleKey ? options.shuffleKey.toLowerCase() : "t";
+      settings.shuffleKeyCode = keyCodes[settings.shuffleKey] || 84;
 
-      deck.addKeyBinding({ keyCode: settings.keyCode2, key: settings.key2 }, () => {
+      deck.addKeyBinding({ keyCode: settings.shuffleKeyCode, key: settings.shuffleKey }, () => {
         deck.shuffle();
         deck.slide(0, 0, 0);
       });
