@@ -2,7 +2,7 @@
 
 Simple RevealJS that allows you to create flashcards in Quarto.
 
-Here's is an example of what the flashcards look like.
+Here's an example of what a flashcard look like using this extension.
 
 Front of a flashcard:
 
