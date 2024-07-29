@@ -2,9 +2,9 @@
 
 Simple RevealJS that allows you to create flashcards in Quarto.
 
-![example of the front of a flashcard](example-front.png)
+<img src="example-front.png" width="70%">
 
-![example of the front of a flashcard](example-back.png)
+<img src="example-back.png" width="70%">
 
 ## Installing
 
