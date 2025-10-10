@@ -6,6 +6,7 @@ format:
       flipKey: 'q'
       shuffleKey: 't'
       showFlipButton: true
+      resetOnSlideChange: true
 revealjs-plugins:
   - flashcards
 ---
@@ -18,6 +19,8 @@ This is an example of using the `flashcards` plugin in a reveal.js presentation.
 Press the `q` key (by default) to flip a flashcard slide. You can you can override the default keybinding by setting the `flipKey` option in the YAML header. 
 
 You'll also see a flip button in the top right corner of the slide. You can hide this button by setting `showFlipButton: false` in the YAML header.
+
+By default, flashcards do not reset to the front when you navigate to a new slide. You can enable this by setting `resetOnSlideChange: true` in the YAML header.
 :::
 
 :::{.flashcard-back}

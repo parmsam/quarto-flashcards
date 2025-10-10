@@ -24,6 +24,7 @@ window.RevealFlashcards = function () {
 
       var settings = {};
       settings.flipButton = options.showFlipButton ? options.showFlipButton: false;
+      settings.resetOnSlideChange = options.resetOnSlideChange !== undefined ? options.resetOnSlideChange : true;
 
       // Add the flip button to each slide
       if (settings.flipButton) {
@@ -90,6 +91,21 @@ window.RevealFlashcards = function () {
         deck.shuffle();
         deck.slide(0, 0, 0);
       });
+
+      // Add slide change event listener to reset flashcards to front if enabled
+      if (settings.resetOnSlideChange) {
+        deck.addEventListener('slidechanged', function(event) {
+          let currentSlide = event.currentSlide;
+          let flashcardFront = currentSlide.querySelector('.flashcard-front');
+          let flashcardBack = currentSlide.querySelector('.flashcard-back');
+          
+          if (flashcardFront && flashcardBack) {
+            // Reset to front: remove active from front, remove active from back
+            flashcardFront.classList.remove('active');
+            flashcardBack.classList.remove('active');
+          }
+        });
+      }
 
     },
   };

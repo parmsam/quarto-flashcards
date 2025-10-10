@@ -58,13 +58,16 @@ format:
       flipKey: 'r'
       shuffleKey: 't'
       showFlipButton: true
+      resetOnSlideChange: true
 revealjs-plugins:
   - flashcards
 ```
 
 You'll also notice a `shuffleKey` option. This is a keyboard shortcut that can be used to shuffle the slides and jump to the new first slide. By default, it's set to 't' but you can change it to any key you like.
 
-Lastly, there's a flip button on the top right corner of the slide that can be shown on the flashcard. By default, it's set to `true` but you can change it to `false` to hide the flip buttons.
+The `showFlipButton` option controls whether a flip button appears on the top right corner of flashcard slides. By default, it's set to `true` but you can change it to `false` to hide the flip buttons.
+
+The `resetOnSlideChange` option controls whether flashcards automatically reset to show the front when you navigate to a new slide. By default, it's set to `true`, meaning that if you flip a card to the back and then move to another slide, any flashcards on the new slide will start showing their front side. Set this to `false` if you want flashcards to maintain their state when navigating between slides.
 
 ## Example
 
