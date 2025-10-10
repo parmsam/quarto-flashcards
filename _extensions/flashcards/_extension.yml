@@ -15,4 +15,6 @@ contributes:
           shuffleKey: "t"
           showFlipButton: true
           resetOnSlideChange: false
+          flipButtonColorFront: "#2a76dd"
+          flipButtonColorBack: "#28a745"
   

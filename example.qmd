@@ -7,6 +7,8 @@ format:
       shuffleKey: 't'
       showFlipButton: true
       resetOnSlideChange: true
+      flipButtonColorFront: "#2a76dd"
+      flipButtonColorBack: "#28a745"
 revealjs-plugins:
   - flashcards
 ---

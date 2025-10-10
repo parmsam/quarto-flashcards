@@ -59,6 +59,8 @@ format:
       shuffleKey: 't'
       showFlipButton: true
       resetOnSlideChange: true
+      flipButtonColorFront: "#2a76dd"
+      flipButtonColorBack: "#28a745"
 revealjs-plugins:
   - flashcards
 ```
@@ -68,6 +70,8 @@ You'll also notice a `shuffleKey` option. This is a keyboard shortcut that can b
 The `showFlipButton` option controls whether a flip button appears on the top right corner of flashcard slides. By default, it's set to `true` but you can change it to `false` to hide the flip buttons.
 
 The `resetOnSlideChange` option controls whether flashcards automatically reset to show the front when you navigate to a new slide. By default, it's set to `true`, meaning that if you flip a card to the back and then move to another slide, any flashcards on the new slide will start showing their front side. Set this to `false` if you want flashcards to maintain their state when navigating between slides.
+
+The `flipButtonColorFront` and `flipButtonColorBack` options allow you to customize the color of the flip button. The button will be blue (`#2a76dd`) when showing the front of the card and green (`#28a745`) when showing the back. You can set these to any valid CSS color value (hex codes, color names, rgb values, etc.).
 
 ## Example
 
