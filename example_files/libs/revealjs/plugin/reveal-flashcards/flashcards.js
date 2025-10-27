@@ -27,6 +27,9 @@ window.RevealFlashcards = function () {
       settings.resetOnSlideChange = options.resetOnSlideChange !== undefined ? options.resetOnSlideChange : true;
       settings.flipButtonColorFront = options.flipButtonColorFront || "#2a76dd";
       settings.flipButtonColorBack = options.flipButtonColorBack || "#28a745";
+      
+      console.log("resetOnSlideChange setting:", settings.resetOnSlideChange);
+      console.log("options.resetOnSlideChange:", options.resetOnSlideChange);
 
       // Add the flip button to each slide
       if (settings.flipButton) {
