@@ -24,13 +24,17 @@ window.RevealFlashcards = function () {
 
       var settings = {};
       settings.flipButton = options.showFlipButton ? options.showFlipButton: false;
+      settings.resetOnSlideChange = options.resetOnSlideChange !== undefined ? options.resetOnSlideChange : true;
+      settings.flipButtonColorFront = options.flipButtonColorFront || "#2a76dd";
+      settings.flipButtonColorBack = options.flipButtonColorBack || "#28a745";
 
       // Add the flip button to each slide
       if (settings.flipButton) {
         // Create the flip button
         let flipButton = document.createElement('button');
+        flipButton.className = 'flashcard-flip-button';
         flipButton.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2a76dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="${settings.flipButtonColorFront}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="16 3 21 3 21 8"></polyline>
           <line x1="4" y1="20" x2="21" y2="3"></line>
           <polyline points="21 16 21 21 16 21"></polyline>
@@ -62,6 +66,11 @@ window.RevealFlashcards = function () {
                 // Toggle the active class between the front and back of the flashcard
                 flashcardFront.classList.toggle('active');
                 flashcardBack.classList.toggle('active');
+                
+                // Update button color based on current state
+                const svg = clone.querySelector('svg');
+                const isShowingBack = flashcardBack.classList.contains('active');
+                svg.setAttribute('stroke', isShowingBack ? settings.flipButtonColorBack : settings.flipButtonColorFront);
               }
             });
             slide.appendChild(clone);
@@ -80,6 +89,16 @@ window.RevealFlashcards = function () {
           // Toggle the active class between the front and back of the flashcard
           flashcardFront.classList.toggle('active');
           flashcardBack.classList.toggle('active');
+          
+          // Update button color if flip button exists on this slide
+          if (settings.flipButton) {
+            const button = currentSlide.querySelector('.flashcard-flip-button');
+            if (button) {
+              const svg = button.querySelector('svg');
+              const isShowingBack = flashcardBack.classList.contains('active');
+              svg.setAttribute('stroke', isShowingBack ? settings.flipButtonColorBack : settings.flipButtonColorFront);
+            }
+          }
         }
       });
 
@@ -90,6 +109,30 @@ window.RevealFlashcards = function () {
         deck.shuffle();
         deck.slide(0, 0, 0);
       });
+
+      // Add slide change event listener to reset flashcards to front if enabled
+      if (settings.resetOnSlideChange) {
+        deck.addEventListener('slidechanged', function(event) {
+          let currentSlide = event.currentSlide;
+          let flashcardFront = currentSlide.querySelector('.flashcard-front');
+          let flashcardBack = currentSlide.querySelector('.flashcard-back');
+          
+          if (flashcardFront && flashcardBack) {
+            // Reset to front: remove active from front, remove active from back
+            flashcardFront.classList.remove('active');
+            flashcardBack.classList.remove('active');
+            
+            // Reset button color to front color if flip button exists on this slide
+            if (settings.flipButton) {
+              const button = currentSlide.querySelector('.flashcard-flip-button');
+              if (button) {
+                const svg = button.querySelector('svg');
+                svg.setAttribute('stroke', settings.flipButtonColorFront);
+              }
+            }
+          }
+        });
+      }
 
     },
   };
