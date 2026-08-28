@@ -33,7 +33,7 @@ Nicely done! Let's go over some example flashcards to see how this looks.
 
 ::: {.flashcard-front}
 What is the capital of France?
-https://upload.wikimedia.org/wikipedia/commons/8/80/France_location_map.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+
 [![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/France_location_map.svg/1280px-France_location_map.svg.png?20160102094348){height=400px}](https://en.wikipedia.org/wiki/France)
 :::
 
